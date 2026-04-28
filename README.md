@@ -5,7 +5,7 @@
 
 [![Google Solution Challenge 2026](https://img.shields.io/badge/Google%20Solution%20Challenge-2026-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/community/gdsc-solution-challenge)
 [![PS3 Smart Supply Chains](https://img.shields.io/badge/PS3-Smart%20Supply%20Chains-34A853?style=for-the-badge)](https://hack2skill.com)
-[![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Gemini%20Pro-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Gemini%202.5%20Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
 [![Vertex AI](https://img.shields.io/badge/Vertex%20AI-Embeddings-EA4335?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
 [![Cloud Run](https://img.shields.io/badge/Google-Cloud%20Run-FBBC04?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/run)
 
@@ -18,8 +18,6 @@
 > **Chronyx reads the news before your supply chain breaks — and reroutes your shipments before the dashboard turns red.**
 
 </div>
-
----
 
 ---
 
@@ -38,6 +36,7 @@
 - [Research Foundation](#-research-foundation)
 - [Tech Stack](#️-tech-stack)
 - [Getting Started](#-getting-started)
+- [Backend — AI Pipeline](#-backend--ai-pipeline-live)
 - [Project Structure](#-project-structure)
 - [Business Viability](#-business-viability)
 - [Future Development](#-future-development)
@@ -59,7 +58,7 @@ The gap isn't dashboards. The gap is **lead time**.
 
 Chronyx is a **nine-agent AI system** that ingests real-time narrative signals — news, supplier communications, port alerts, freight bulletins — and transforms them into structured disruption intelligence *before* disruptions manifest operationally.
 
-At its core is the **Disruption Risk Index (DRI)**, a real-time composite risk metric computed from four independent signal dimensions. When DRI crosses a threshold, Chronyx doesn't just alert you — it classifies the root cause via **Gemini Pro**, computes the optimal alternate route via a **graph-based optimization engine**, and autonomously executes or escalates the action based on a **confidence-gated decision framework**.
+At its core is the **Disruption Risk Index (DRI)**, a real-time composite risk metric computed from four independent signal dimensions. When DRI crosses a threshold, Chronyx doesn't just alert you — it classifies the root cause via **Gemini 2.5 Flash**, computes the optimal alternate route via a **graph-based optimization engine**, and autonomously executes or escalates the action based on a **confidence-gated decision framework**.
 
 ```
 DRI(t) = 0.35·Sv(t) + 0.25·Df(t) + 0.25·Rs(t) + 0.15·Ss(t)
@@ -90,7 +89,7 @@ DRI > 0.72 → Autonomous Action Triggered
 ║                         ──────────▶  DetectAgent                 ║
 ║                                        │                         ║
 ║                                         ──▶  RootCauseAgent      ║
-║                                              [GEMINI PRO CORE]   ║
+║                                              [GEMINI 2.5 FLASH]  ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                        ACTION LAYER                              ║
 ║                                                                  ║
@@ -114,7 +113,7 @@ DRI > 0.72 → Autonomous Action Triggered
 | 3 | **DRI Engine** | Intelligence | Computes Disruption Risk Index per time window; detects threshold crossings |
 | 4 | **ForecastAgent** | Intelligence | Projects delivery timelines and cost trajectories under active DRI conditions |
 | 5 | **DetectAgent** | Intelligence | Classifies breach type: Port Congestion / Freight Surge / Supplier Overlap / SLA Breach |
-| 6 | **RootCauseAgent** | Intelligence | **Gemini Pro** zero-shot classifies root cause: `weather_event` / `carrier_failure` / `demand_surge` / `geopolitical_signal` |
+| 6 | **RootCauseAgent** | Intelligence | **Gemini 2.5 Flash** zero-shot classifies root cause: `weather_event` / `carrier_failure` / `demand_surge` / `geopolitical_signal` |
 | 7 | **RouteAgent** | Action | DROE: graph-based supply chain model, risk-aware Dijkstra, optimal rerouting |
 | 8 | **ExecuteAgent** | Action | Auto-executes (≥85% confidence) or escalates; computes realised penalty prevention |
 | 9 | **AuditAgent** | Action | SHA-256 hashed tamper-evident log of every detection and action |
@@ -183,11 +182,11 @@ This is not a black box. Every autonomous action is explainable, auditable, and 
 
 | Google Service | Agent | Why Here |
 |----------------|-------|----------|
-| **Gemini Pro** | RootCauseAgent | Zero-shot disruption root cause classification across 4 categories. Generates natural-language decision rationale. Enables differentiated response per disruption type. |
+| **Gemini 2.5 Flash** | RootCauseAgent | Zero-shot disruption root cause classification across 4 categories. Generates natural-language decision rationale. Enables differentiated response per disruption type. |
 | **Vertex AI Text Embeddings** | SignalAgent | Semantic similarity across supplier contracts to detect overlap and redundancy. Encodes unstructured text into vector space for comparison. |
 | **Google Cloud Run** | Deployment | Containerised FastAPI backend with auto-scaling. Handles burst ingestion events without manual capacity management. |
 
-> **Google AI is not a checkbox in Chronyx — it is load-bearing architecture.** Gemini Pro is the only component capable of zero-shot root cause classification across novel disruption patterns. Vertex AI Embeddings is the only component capable of semantic supplier overlap detection at scale.
+> **Google AI is not a checkbox in Chronyx — it is load-bearing architecture.** Gemini 2.5 Flash is the only component capable of zero-shot root cause classification across novel disruption patterns. Vertex AI Embeddings is the only component capable of semantic supplier overlap detection at scale.
 
 ---
 
@@ -221,29 +220,29 @@ DRI = 0.35(0.85) + 0.25(0.70) + 0.25(0.90) + 0.15(0.65) = 0.79 → CRITICAL
 ### Scenario 1 — Port Congestion Early Warning
 | Metric | Value |
 |--------|-------|
-| DRI at detection | 0.74 |
+| DRI at detection | 0.7950 |
 | Lead time | 6 hours before physical congestion |
 | Shipments protected | 3 |
 | Penalty prevented | **₹2.1L** |
-| Execution | Auto (confidence 91%) |
+| Execution | Auto (confidence 95%) |
 
 ### Scenario 2 — Freight Cost Surge Optimisation
 | Metric | Value |
 |--------|-------|
-| DRI at detection | 0.68 |
+| DRI at detection | 0.6670 |
 | Trigger | Carrier rate spike +40% in news feeds |
 | Shipments protected | 7 |
 | Monthly saving | **₹1.8L/month** |
-| Execution | Human-approved (confidence 77%) |
+| Execution | Auto (confidence 85%) |
 
 ### Scenario 3 — Supplier Redundancy Optimisation
 | Metric | Value |
 |--------|-------|
-| DRI at detection | 0.61 |
+| DRI at detection | 0.5030 |
 | Trigger | Vertex AI cosine similarity >0.87 across 3 vendor contracts |
 | Contracts consolidated | 12 |
 | Monthly efficiency gain | **₹3.2L/month** |
-| Execution | Human-approved (confidence 71%) |
+| Execution | Human-approved (confidence 67%) |
 
 **Combined monthly disruption cost prevented: ₹7.1L+**
 
@@ -256,7 +255,7 @@ DRI = 0.35(0.85) + 0.25(0.70) + 0.25(0.90) + 0.15(0.65) = 0.79 → CRITICAL
 | Trigger timing | Post-disruption | Post-disruption | Post-disruption | **Pre-disruption** |
 | Data handled | Structured (GPS) | Structured (GPS) | Structured | **Unstructured + Structured** |
 | Response time | T+24 to T+72 hrs | T+24 hrs | T+48 hrs | **T-72 hrs** |
-| Root cause reasoning | ❌ | ❌ | ❌ | **✅ Gemini Pro** |
+| Root cause reasoning | ❌ | ❌ | ❌ | **✅ Gemini 2.5 Flash** |
 | Autonomous rerouting | ❌ | Partial | ❌ | **✅ Confidence-gated** |
 | Audit trail (hashed) | ❌ | ❌ | Partial | **✅ SHA-256** |
 | LLM integration | ❌ | ❌ | ❌ | **✅** |
@@ -283,19 +282,20 @@ Every architectural decision in Chronyx is grounded in published research:
    → Validates autonomous rerouting under uncertainty. Grounds the DROE strategy and confidence-gated execution model.
 
 6. **Brown et al. (2020)** — *Language Models are Few-Shot Learners (GPT-3)*, NeurIPS  
-   → Establishes zero-shot reasoning in LLMs. Foundation for RootCauseAgent's use of Gemini Pro for zero-shot classification without fine-tuning.
+   → Establishes zero-shot reasoning in LLMs. Foundation for RootCauseAgent's use of Gemini 2.5 Flash for zero-shot classification without fine-tuning.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ```
-Frontend    │ React (TypeScript) · Vite · Tailwind CSS · shadcn/ui
+Frontend     │ React (TypeScript) · Vite · Tailwind CSS · shadcn/ui
 Visualisation│ Recharts (DRI time series) · Custom SVG route graph
-Backend     │ Python 3.11 · FastAPI · Uvicorn
-AI / ML     │ Gemini Pro API · Vertex AI Text Embeddings
-Deployment  │ Google Cloud Run · Firebase Hosting
-Dev Tools   │ GitHub · VS Code
+Backend      │ Python 3.11 · FastAPI · Uvicorn · google-genai SDK
+AI / ML      │ Gemini 2.5 Flash (live) · Vertex AI Text Embeddings
+Algorithms   │ Risk-aware Dijkstra (DROE) · SHA-256 audit logging
+Deployment   │ Google Cloud Run · Firebase Hosting
+Dev Tools    │ GitHub · VS Code
 ```
 
 ---
@@ -305,7 +305,7 @@ Dev Tools   │ GitHub · VS Code
 ### Prerequisites
 - Node.js ≥ 18
 - Python ≥ 3.11
-- Google Cloud account with Gemini API and Vertex AI enabled
+- Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey)
 
 ### Frontend Setup
 
@@ -318,30 +318,99 @@ npm run dev
 
 Runs on `http://localhost:5173`
 
+### Frontend Environment Variables
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+VITE_APP_NAME=Chronyx
+```
+
+---
+
+## 🤖 Backend — AI Pipeline (Live)
+
+The `backend/` folder contains the complete 9-agent Python pipeline powering Chronyx's intelligence layer. The frontend at [gen-lang-client-0312993678.web.app](https://gen-lang-client-0312993678.web.app) shows the UI — the backend demonstrates the live Gemini AI reasoning behind every decision.
+
+> **Gemini 2.5 Flash is live and connected** — every run calls the Gemini API for real zero-shot root cause classification, not a mock or fallback.
+
 ### Backend Setup
 
 ```bash
 cd backend
+
+# Create and activate virtual environment
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+
 pip install -r requirements.txt
+
+# Add your Gemini API key
 cp .env.example .env
-# Add your GEMINI_API_KEY and VERTEX_PROJECT_ID to .env
+# Open .env and set GEMINI_API_KEY=your_key_here
+```
+
+Get your free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+
+### Run the Demo (Terminal — no server needed)
+
+```bash
+# All 3 scenarios end-to-end
+python run_demo.py
+
+# Or run a single scenario
+python run_demo.py port_congestion
+python run_demo.py freight_surge
+python run_demo.py supplier_overlap
+```
+
+### Live Pipeline Output (Verified)
+
+```
+✓ Gemini API connected (gemini-2.5-flash)
+
+AGENT 6 — RootCauseAgent  [GEMINI 2.5 FLASH]
+  ◉  Calling Gemini API...
+  ✓  Gemini response received
+  Root Cause Category:  weather_event
+  Root Cause Label:     Major Weather Event
+  Confidence:           95%
+  Source:               gemini_api (live)
+
+PIPELINE COMPLETE (8.55s)
+  DRI Score:     0.7950  (ACTION THRESHOLD BREACHED)
+  Gemini Source: gemini_api
+  Execution:     AUTO EXECUTING
+  Value:         $35,775 SLA penalties prevented
+  Audit Entry:   0xC82CD7F7
+```
+
+### Scenario Results (Live Gemini Verified)
+
+| Scenario | DRI | Zone | Gemini Confidence | Execution | Value Saved |
+|----------|-----|------|-------------------|-----------|-------------|
+| `port_congestion` | 0.7950 | 🔴 CRITICAL | 95% | AUTO EXECUTE | $35,775 |
+| `freight_surge` | 0.6670 | 🟡 ELEVATED | 95% | AUTO EXECUTE | $30,015 |
+| `supplier_overlap` | 0.5030 | 🟡 ELEVATED | 75% | PENDING APPROVAL | $22,635 |
+
+**Total: $88,425 in SLA penalties prevented across 3 live scenarios**
+
+### Optional: Run as API Server
+
+```bash
 uvicorn main:app --reload
+# Available at http://localhost:8000
 ```
 
-Runs on `http://localhost:8000`
-
-### Environment Variables
-
-```env
-# Backend .env
-GEMINI_API_KEY=your_gemini_api_key
-VERTEX_PROJECT_ID=your_gcp_project_id
-VERTEX_LOCATION=us-central1
-
-# Frontend .env
-VITE_API_BASE_URL=http://localhost:8000
-VITE_APP_NAME=Chronyx
-```
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/analyse` | POST | Run full 9-agent pipeline for a scenario |
+| `/dri/{scenario}` | GET | Quick DRI score lookup |
+| `/audit-log` | GET | Full SHA-256 tamper-evident log |
+| `/health` | GET | Gemini connection + system status |
 
 ---
 
@@ -365,9 +434,14 @@ chronyx/
 │   │   │   ├── RouteMap.tsx       # DROE graph visualization
 │   │   │   ├── KPIPanel.tsx       # Business impact metrics
 │   │   │   └── FeedbackLoop.tsx   # Learning loop status
-│   │   └── ui/                # shadcn/ui component library
+│   │   └── ui/                    # shadcn/ui component library
 │   └── App.tsx
-├── backend/                   # FastAPI backend (if applicable)
+├── backend/
+│   ├── main.py                # Full 9-agent FastAPI pipeline (Gemini live)
+│   ├── run_demo.py            # Terminal demo runner (no server needed)
+│   ├── requirements.txt       # Python dependencies
+│   ├── .env.example           # Environment variable template
+│   └── README.md              # Backend-specific setup guide
 ├── public/
 └── README.md
 ```
