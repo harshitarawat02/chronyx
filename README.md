@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Chronyx
+# Chronyx
 ### Narrative-Driven Supply Chain Intelligence & Optimization System
 
 [![Google Solution Challenge 2026](https://img.shields.io/badge/Google%20Solution%20Challenge-2026-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/community/gdsc-solution-challenge)
