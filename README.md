@@ -1,6 +1,6 @@
 <div align="center">
 
-# Chronyx
+# ⚡ Chronyx
 ### Narrative-Driven Supply Chain Intelligence & Optimization System
 
 [![Google Solution Challenge 2026](https://img.shields.io/badge/Google%20Solution%20Challenge-2026-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/community/gdsc-solution-challenge)
@@ -21,21 +21,27 @@
 
 ---
 
-## 📚 Document Index
+---
 
-All research, architecture, and demonstration materials for Chronyx in one place.
+## 📑 Table of Contents
 
-| # | Document | What's Inside | Link |
-|---|----------|---------------|------|
-| 1 | **Master Concept Document** | Full system design, DRI formula, all 9 agents, research foundation, business viability | [Google Drive](https://drive.google.com/drive/folders/1KR3A9_VLpeCBtGn6Dx8e7284jJjwT4wq?usp=sharing) |
-| 2 | **Technical Architecture** | Three-layer pipeline, agent specifications, DROE graph model, confidence-gated framework | [Google Drive](https://drive.google.com/drive/folders/1KR3A9_VLpeCBtGn6Dx8e7284jJjwT4wq?usp=sharing) |
-| 3 | **POC Demonstration** | Pacific Rim disruption scenario, live DRI computation (0.79 CRITICAL), Gemini JSON output, $45K penalty prevented | [Google Drive](https://drive.google.com/drive/folders/1KR3A9_VLpeCBtGn6Dx8e7284jJjwT4wq?usp=sharing) |
-| 4 | **Prototype Presentation** | Solution overview, comparative analysis, use cases, cost model, future roadmap | [View PPT](https://drive.google.com/drive/folders/1KR3A9_VLpeCBtGn6Dx8e7284jJjwT4wq?usp=sharing) |
-| 5 | **Live MVP** | Working prototype — DRI dashboard, Gemini root cause panel, DROE route map, audit log | [gen-lang-client-0312993678.web.app](https://gen-lang-client-0312993678.web.app/) |
-| 6 | **Demo Video (3 min)** | End-to-end walkthrough of the three core disruption scenarios | [Google Drive](https://drive.google.com/file/d/1uOgXXdeZuYJgfLseG7_AVXP0Up9U20MA/view?usp=sharing) |
-| 7 | **GitHub Repository** | Full source code — React + TypeScript frontend, agent pipeline, DRI engine | [harshitarawat02/chronyx](https://github.com/harshitarawat02/chronyx) |
-
-> **Recommended reading order for evaluators:** POC Demonstration → Technical Architecture → Master Concept Document → Live MVP
+- [The Problem](#-the-problem)
+- [Our Solution](#-our-solution)
+- [System Architecture](#️-system-architecture)
+- [Disruption Risk Index (DRI)](#-disruption-risk-index-dri)
+- [Dynamic Route Optimization Engine (DROE)](#️-dynamic-route-optimization-engine-droe)
+- [Confidence-Gated Decision Framework](#-confidence-gated-decision-framework)
+- [Google AI Integration](#️-google-ai-integration)
+- [POC Demonstration](#-poc-demonstration-pacific-rim-disruption)
+- [Three Core Scenarios](#-three-core-scenarios)
+- [Competitive Differentiation](#-competitive-differentiation)
+- [Research Foundation](#-research-foundation)
+- [Tech Stack](#️-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Business Viability](#-business-viability)
+- [Future Development](#-future-development)
+- [Team](#-team)
 
 ---
 
