@@ -1,4 +1,4 @@
-# Chronyx Control Tower
+# Chronyx 
 
 AI-powered supply chain intelligence platform for proactive disruption prediction and autonomous mitigation.
 
