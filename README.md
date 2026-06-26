@@ -480,7 +480,7 @@ chronyx/
 
 ---
 
-**Team Ethreal** · Google Solution Challenge 2026
+Built during Google Solution Challenge 2026 (Team Ethreal – hackathon project)
 
 ---
 
