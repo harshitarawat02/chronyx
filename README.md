@@ -480,14 +480,7 @@ chronyx/
 
 ---
 
-## 👥 Team
-
 **Team Ethreal** · Google Solution Challenge 2026
-
-| Role | Name | GitHub |
-|------|------|--------|
-| Team Leader | **Aditi Rathore** | [@AditiR-21](https://github.com/AditiR-21) |
-| Team Member | **Harshita Rawat** | [@harshitarawat02](https://github.com/harshitarawat02) |
 
 ---
 
