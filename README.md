@@ -9,7 +9,7 @@
 [![Vertex AI](https://img.shields.io/badge/Vertex%20AI-Embeddings-EA4335?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
 [![Cloud Run](https://img.shields.io/badge/Google-Cloud%20Run-FBBC04?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/run)
 
-**Team Ethreal · Team Leader: Aditi Rathore**
+
 
 [🚀 Live Demo](https://gen-lang-client-0312993678.web.app/) · [🎥 Demo Video](https://drive.google.com/file/d/1uOgXXdeZuYJgfLseG7_AVXP0Up9U20MA/view?usp=sharing) · [📂 Technical Research](https://drive.google.com/drive/folders/1KR3A9_VLpeCBtGn6Dx8e7284jJjwT4wq?usp=sharing)
 
